@@ -34,6 +34,7 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblHumedad = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             this.SuspendLayout();
@@ -116,11 +117,25 @@
             this.materialDivider1.TabIndex = 6;
             this.materialDivider1.Text = "materialDivider1";
             // 
+            // lblHumedad
+            // 
+            this.lblHumedad.AutoSize = true;
+            this.lblHumedad.Depth = 0;
+            this.lblHumedad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblHumedad.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
+            this.lblHumedad.Location = new System.Drawing.Point(66, 225);
+            this.lblHumedad.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHumedad.Name = "lblHumedad";
+            this.lblHumedad.Size = new System.Drawing.Size(151, 19);
+            this.lblHumedad.TabIndex = 7;
+            this.lblHumedad.Text = "Grado de resequedad";
+            // 
             // frmEstados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 443);
+            this.Controls.Add(this.lblHumedad);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
@@ -128,6 +143,8 @@
             this.Name = "frmEstados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de riego";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEstados_FormClosed);
+            this.Load += new System.EventHandler(this.frmEstados_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
@@ -143,6 +160,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel lblHumedad;
     }
 }
 

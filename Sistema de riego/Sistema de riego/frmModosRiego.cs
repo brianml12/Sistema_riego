@@ -13,8 +13,8 @@ using System.Windows.Forms;
 namespace Sistema_de_riego
 {
     public partial class frmModosRiego : MaterialForm
-
     {
+
         public frmModosRiego()
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace Sistema_de_riego
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen800, Primary.LightGreen900, Primary.LightGreen500, Accent.LightGreen200, TextShade.WHITE);
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -37,6 +38,14 @@ namespace Sistema_de_riego
             frmRiegoManual frmriegomanual = new frmRiegoManual();
             frmriegomanual.Show();
             this.Close();
+        }
+
+        private void btnAutomatico_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void frmModosRiego_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

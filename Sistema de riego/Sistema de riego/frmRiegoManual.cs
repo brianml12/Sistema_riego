@@ -13,8 +13,8 @@ using System.Windows.Forms;
 namespace Sistema_de_riego
 {
     public partial class frmRiegoManual : MaterialForm
-
     {
+        System.IO.Ports.SerialPort Arduino;
         public frmRiegoManual()
         {
             InitializeComponent();
@@ -23,6 +23,12 @@ namespace Sistema_de_riego
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen800, Primary.LightGreen900, Primary.LightGreen500, Accent.Red400, TextShade.WHITE);
+
+            // Inicializar comunicación serial
+            Arduino = new System.IO.Ports.SerialPort();
+            Arduino.PortName = "COM8";
+            Arduino.BaudRate = 9600;
+            Arduino.Open();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -30,6 +36,23 @@ namespace Sistema_de_riego
             frmModosRiego frmmodosriego = new frmModosRiego();
             frmmodosriego.Show();
             this.Close();
+        }
+
+        private void btnActivarRiego_Click(object sender, EventArgs e)
+        {
+            Arduino.Write("2");
+        }
+
+        private void frmRiegoManual_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Arduino.IsOpen) { 
+                Arduino.Close();
+            }
+        }
+
+        private void btnAutomatico_Click(object sender, EventArgs e)
+        {
+            Arduino.Write("3");
         }
     }
 }

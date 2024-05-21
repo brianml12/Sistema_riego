@@ -56,6 +56,7 @@
             this.btnActivarRiego.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnActivarRiego.UseAccentColor = false;
             this.btnActivarRiego.UseVisualStyleBackColor = false;
+            this.btnActivarRiego.Click += new System.EventHandler(this.btnActivarRiego_Click);
             // 
             // btnAutomatico
             // 
@@ -75,6 +76,7 @@
             this.btnAutomatico.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAutomatico.UseAccentColor = true;
             this.btnAutomatico.UseVisualStyleBackColor = true;
+            this.btnAutomatico.Click += new System.EventHandler(this.btnAutomatico_Click);
             // 
             // materialCard1
             // 
@@ -128,6 +130,7 @@
             this.Name = "frmRiegoManual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de riego";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRiegoManual_FormClosing);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
