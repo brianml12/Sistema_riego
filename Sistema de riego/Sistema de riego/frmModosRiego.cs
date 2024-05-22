@@ -15,6 +15,8 @@ namespace Sistema_de_riego
     public partial class frmModosRiego : MaterialForm
     {
 
+        System.IO.Ports.SerialPort Arduino;
+
         public frmModosRiego()
         {
             InitializeComponent();
@@ -24,6 +26,11 @@ namespace Sistema_de_riego
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen800, Primary.LightGreen900, Primary.LightGreen500, Accent.LightGreen200, TextShade.WHITE);
 
+            // Inicializar comunicación serial
+            Arduino = new System.IO.Ports.SerialPort();
+            Arduino.PortName = "COM8";
+            Arduino.BaudRate = 9600;
+            Arduino.Open();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -35,6 +42,9 @@ namespace Sistema_de_riego
 
         private void btnManual_Click(object sender, EventArgs e)
         {
+            if (Arduino.IsOpen) { 
+                Arduino.Close();
+            }
             frmRiegoManual frmriegomanual = new frmRiegoManual();
             frmriegomanual.Show();
             this.Close();
@@ -42,10 +52,19 @@ namespace Sistema_de_riego
 
         private void btnAutomatico_Click(object sender, EventArgs e)
         {
+            Arduino.Write("A");
         }
 
         private void frmModosRiego_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (Arduino.IsOpen) { 
+                Arduino.Close();
+            }
+        }
+
+        private void frmModosRiego_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,6 +33,9 @@ namespace Sistema_de_riego
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            if (Arduino.IsOpen) { 
+                Arduino.Close();
+            }
             frmModosRiego frmmodosriego = new frmModosRiego();
             frmmodosriego.Show();
             this.Close();
@@ -40,7 +43,7 @@ namespace Sistema_de_riego
 
         private void btnActivarRiego_Click(object sender, EventArgs e)
         {
-            Arduino.Write("2");
+            Arduino.Write("B");
         }
 
         private void frmRiegoManual_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,7 +55,12 @@ namespace Sistema_de_riego
 
         private void btnAutomatico_Click(object sender, EventArgs e)
         {
-            Arduino.Write("3");
+            Arduino.Write("C");
+        }
+
+        private void frmRiegoManual_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -131,6 +131,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de riego";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRiegoManual_FormClosing);
+            this.Load += new System.EventHandler(this.frmRiegoManual_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();

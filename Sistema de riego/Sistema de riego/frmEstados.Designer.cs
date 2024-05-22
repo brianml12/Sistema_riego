@@ -32,8 +32,7 @@
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblPorcentaje = new MaterialSkin.Controls.MaterialLabel();
             this.lblHumedad = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
@@ -89,33 +88,22 @@
             this.materialLabel2.Location = new System.Drawing.Point(66, 197);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(151, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(138, 19);
             this.materialLabel2.TabIndex = 4;
-            this.materialLabel2.Text = "Grado de resequedad";
+            this.materialLabel2.Text = "Grado de Humedad";
             // 
-            // materialLabel3
+            // lblPorcentaje
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel3.Location = new System.Drawing.Point(48, 292);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(187, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Tiempo del siguiente riego";
-            // 
-            // materialDivider1
-            // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(50, 267);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(185, 10);
-            this.materialDivider1.TabIndex = 6;
-            this.materialDivider1.Text = "materialDivider1";
+            this.lblPorcentaje.AutoSize = true;
+            this.lblPorcentaje.Depth = 0;
+            this.lblPorcentaje.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblPorcentaje.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
+            this.lblPorcentaje.Location = new System.Drawing.Point(48, 234);
+            this.lblPorcentaje.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblPorcentaje.Name = "lblPorcentaje";
+            this.lblPorcentaje.Size = new System.Drawing.Size(187, 19);
+            this.lblPorcentaje.TabIndex = 5;
+            this.lblPorcentaje.Text = "Tiempo del siguiente riego";
             // 
             // lblHumedad
             // 
@@ -123,7 +111,7 @@
             this.lblHumedad.Depth = 0;
             this.lblHumedad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblHumedad.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.lblHumedad.Location = new System.Drawing.Point(66, 225);
+            this.lblHumedad.Location = new System.Drawing.Point(66, 269);
             this.lblHumedad.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblHumedad.Name = "lblHumedad";
             this.lblHumedad.Size = new System.Drawing.Size(151, 19);
@@ -136,8 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 443);
             this.Controls.Add(this.lblHumedad);
-            this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialCard1);
             this.Name = "frmEstados";
@@ -158,8 +145,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.PictureBox btnVolver;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel lblPorcentaje;
         private MaterialSkin.Controls.MaterialLabel lblHumedad;
     }
 }

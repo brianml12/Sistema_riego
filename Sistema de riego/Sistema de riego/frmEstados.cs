@@ -54,7 +54,30 @@ namespace Sistema_de_riego
                     string humedad = Arduino.ReadLine();
                     lblHumedad.Invoke(new MethodInvoker(
                         delegate {
-                            lblHumedad.Text = humedad;
+                            try{
+                                int valor = int.Parse(humedad);
+                                if(valor>=125 && valor<=304) {
+                                    lblHumedad.Text = "Muy alta";
+                                }
+                                else if(valor>=305 && valor<=484) {
+                                    lblHumedad.Text = "Alta";
+                                }
+                                else if(valor>=485 && valor<=664) {
+                                    lblHumedad.Text = "Moderada";
+                                }
+                                else if(valor>=665 && valor<=844) {
+                                    lblHumedad.Text = "Baja";
+                                }
+                                else if(valor>=845 && valor<=1024) {
+                                    lblHumedad.Text = "Muy baja";
+                                }
+                                double porcentaje = ((Double)(1024-valor)/(Double)1024) * 100;
+                                lblPorcentaje.Text = porcentaje.ToString() + " %";
+                            } catch {
+                                lblHumedad.Text = "Moderada";
+                                lblPorcentaje.Text = "50 %";
+                            }
+                            
                         }
                     ));
                 } catch { 

@@ -40,12 +40,12 @@ namespace Sistema_de_riego
 
         private void btnActivarRiego_Click(object sender, EventArgs e)
         {
-            Arduino.Write("4");
+            Arduino.Write("D");
         }
 
         private void btnAutomatico_Click(object sender, EventArgs e)
         {
-            Arduino.Write("5");
+            Arduino.Write("E");
         }
 
         private void frmFertilizacion_FormClosing(object sender, FormClosingEventArgs e)
