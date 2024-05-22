@@ -1,5 +1,7 @@
-﻿using MaterialSkin;
+﻿using Datos;
+using MaterialSkin;
 using MaterialSkin.Controls;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,5 +48,9 @@ namespace Sistema_de_riego
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

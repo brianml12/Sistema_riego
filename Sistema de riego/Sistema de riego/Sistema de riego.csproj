@@ -124,5 +124,15 @@
   <ItemGroup>
     <None Include="Resources\flecha.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{8e99503c-398c-4245-8ffa-4a1b2ebc8599}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{6abb1dd2-81aa-47f1-bc07-3251c36271cc}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

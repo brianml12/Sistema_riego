@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lblPorcentaje = new MaterialSkin.Controls.MaterialLabel();
             this.lblHumedad = new MaterialSkin.Controls.MaterialLabel();
+            this.tmr1 = new System.Windows.Forms.Timer(this.components);
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +120,11 @@
             this.lblHumedad.TabIndex = 7;
             this.lblHumedad.Text = "Grado de resequedad";
             // 
+            // tmr1
+            // 
+            this.tmr1.Interval = 10000;
+            this.tmr1.Tick += new System.EventHandler(this.tmr1_Tick);
+            // 
             // frmEstados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +154,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel lblPorcentaje;
         private MaterialSkin.Controls.MaterialLabel lblHumedad;
+        private System.Windows.Forms.Timer tmr1;
     }
 }
 

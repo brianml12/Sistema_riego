@@ -1,5 +1,7 @@
-﻿using MaterialSkin;
+﻿using Datos;
+using MaterialSkin;
 using MaterialSkin.Controls;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace Sistema_de_riego
 
         System.IO.Ports.SerialPort Arduino;
         bool IsClose = false;
+        double porcenValor = 0.000000;
 
         public frmEstados()
         {
@@ -27,6 +30,9 @@ namespace Sistema_de_riego
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.LightGreen800, Primary.LightGreen900, Primary.LightGreen500, Accent.LightGreen200, TextShade.WHITE);
+
+            //Timer de datos
+            tmr1.Start();
 
             // Inicializar comunicación serial
             Arduino = new System.IO.Ports.SerialPort();
@@ -72,6 +78,7 @@ namespace Sistema_de_riego
                                     lblHumedad.Text = "Muy baja";
                                 }
                                 double porcentaje = ((Double)(1024-valor)/(Double)1024) * 100;
+                                porcenValor = porcentaje;
                                 lblPorcentaje.Text = porcentaje.ToString() + " %";
                             } catch {
                                 lblHumedad.Text = "Moderada";
@@ -90,6 +97,19 @@ namespace Sistema_de_riego
             IsClose = true;
             if (Arduino.IsOpen) {
                 Arduino.Close();
+            }
+        }
+
+        private void tmr1_Tick(object sender, EventArgs e)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            DatosRiego objDatosRiego = new DatosRiego();
+            objDatosRiego.fechaActual = fechaHoraActual.ToString("yyyy-MM-dd HH:mm:ss");
+            objDatosRiego.porcentajeHumedad = porcenValor;
+            objDatosRiego.descripcion = lblHumedad.Text;
+            if (new DAORegistro().agregar(objDatosRiego))
+            {
+                
             }
         }
     }
